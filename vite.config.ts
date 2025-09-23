@@ -12,7 +12,10 @@ export default defineConfig({
             exposes: {
                 "./Auth": "./src/page/Auth"
             },
-            shared: ["react", "react-dom"]
+            shared: ["react", "react-dom"],
+            library: {
+                type: "module"
+            }
         })
     ],
     build: {
