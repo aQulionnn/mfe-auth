@@ -1,0 +1,146 @@
+@property --color-gray-50 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #171717;
+}
+
+@property --color-gray-100 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #161616;
+}
+
+@property --color-gray-200 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #151515;
+}
+
+@property --color-gray-300 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #141414;
+}
+
+@property --color-gray-400 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #131313;
+}
+
+@property --color-gray-500 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #111111;
+}
+
+@property --color-gray-600 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #101010;
+}
+
+@property --color-white {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #fff;
+}
+@property --color-black {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #000;
+}
+@property --color-transparent {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: transparent;
+}
+
+main {
+    width: 100dvw;
+    height: 100dvh;
+    padding: 25px 50px;
+    background: var(--color-black);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+section {
+    width: 50%;
+    height: 100%;
+}
+
+.left-section {
+    background:
+        radial-gradient(
+            circle,
+            var(--color-black) 2.5%,
+            var(--color-transparent) 0
+        ),
+        linear-gradient(
+            var(--color-transparent) calc(50% - 2px),
+            var(--color-white) 0 calc(50% + 2px),
+            var(--color-transparent) 0
+        ) 50% 50% / 25% 25% no-repeat,
+        linear-gradient(
+            90deg,
+            var(--color-transparent) calc(50% - 2px),
+            var(--color-white) 0 calc(50% + 2px),
+            var(--color-transparent) 0
+        ) 50% 50% / 25% 25% no-repeat,
+        linear-gradient(
+            45deg,
+            var(--color-transparent) calc(50% - 2px),
+            var(--color-white) 0 calc(50% + 2px),
+            var(--color-transparent) 0
+        ) 45% 45% / 15% 15% no-repeat,
+        linear-gradient(
+            -45deg,
+            var(--color-transparent) calc(50% - 2px),
+            var(--color-white) 0 calc(50% + 2px),
+            var(--color-transparent) 0
+        ) 45% 55% / 15% 15% no-repeat,
+        linear-gradient(
+                90deg,
+                var(--color-transparent) calc(50% - 0.5px),
+                var(--color-gray-50) 0 calc(50% + 0.5px),
+                var(--color-transparent) 0 calc(100% - 1px),
+                var(--color-gray-50) 0
+        ),
+        linear-gradient(
+                var(--color-transparent) calc(50% - 0.5px),
+                var(--color-gray-50) 0 calc(50% + 0.5px),
+                var(--color-transparent) 0
+        ),
+        linear-gradient(
+                45deg,
+                var(--color-transparent) calc(50% - 0.5px),
+                var(--color-gray-50) 0 calc(50% + 0.5px),
+                var(--color-transparent) 0
+        ),
+        linear-gradient(
+                -45deg,
+                var(--color-transparent) calc(50% - 0.5px),
+                var(--color-gray-50) 0 calc(50% + 0.5px),
+                var(--color-transparent) 0
+        );
+}
+
+.right-section {
+    background:
+        radial-gradient(
+            circle at left center,
+            var(--color-gray-50) 0 10%,
+            var(--color-gray-100) 0 15%,
+            var(--color-gray-200) 0 20%,
+            var(--color-gray-300) 0 25%,
+            var(--color-gray-400) 0 35%,
+            var(--color-gray-500) 0 50%,
+            var(--color-gray-600) 0
+        );
+
+    border-radius: 25px;
+}
