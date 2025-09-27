@@ -1,0 +1,23 @@
+label {
+    width: 50%;
+    display: grid;
+    gap: 10px;
+
+    font-size: 0.75rem;
+    color: var(--color-white);
+}
+
+input {
+    outline: none;
+    border:solid var(--color-white);
+    border-width:0 0 1px 0;
+    background: var(--color-transparent);
+    padding: 5px 0;
+
+    font-size: 1rem;
+    color: var(--color-white);
+}
+
+input[type="password"]::-ms-reveal {
+    display: none;
+}

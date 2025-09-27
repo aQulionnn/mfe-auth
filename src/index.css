@@ -1,5 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+
+@property --color-gray-50 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #171717;
+}
+
+@property --color-gray-100 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #161616;
+}
+
+@property --color-gray-200 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #151515;
+}
+
+@property --color-gray-300 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #141414;
+}
+
+@property --color-gray-400 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #131313;
+}
+
+@property --color-gray-500 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #111111;
+}
+
+@property --color-gray-600 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #101010;
+}
+
+@property --color-white {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #fff;
+}
+@property --color-black {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #000;
+}
+@property --color-transparent {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: transparent;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font-family: 'Kosugi Maru', sans-serif;
 }

@@ -1,4 +1,5 @@
 import style from './Auth.module.css'
+import SignIn from "../components/SignIn/SignIn.tsx";
 
 const Auth = () => {
     return (
@@ -7,7 +8,7 @@ const Auth = () => {
 
             </section>
             <section className={style['right-section']}>
-
+                <SignIn />
             </section>
         </main>
     );
