@@ -1,4 +1,4 @@
-import './Button.module.css'
+import style from './Button.module.css'
 
 type Props = {
     text: string
@@ -6,7 +6,7 @@ type Props = {
 
 const Button = ({ text }: Props) => {
     return (
-        <button>
+        <button className={style['form-btn']}>
             { text }
         </button>
     );

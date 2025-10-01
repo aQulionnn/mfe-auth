@@ -1,16 +1,18 @@
-import './Input.module.css';
+import style from './Input.module.css';
 
 type Props = {
     type: string
     label: string
+    value: string
+    onChange: (val: string) => void
 }
 
-const Input = ({ type, label }: Props) => {
+const Input = ({ type, label, value, onChange }: Props) => {
 
     return (
-        <label>
+        <label className={style['label']}>
             { label }
-            <input type={type} />
+            <input type={type} value={value} onChange={e => onChange(e.target.value)} />
         </label>
     );
 };
