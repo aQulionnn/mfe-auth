@@ -3,30 +3,43 @@ import Button from "../Button/Button.tsx";
 import Input from "../Input/Input.tsx";
 import { useReducer } from "react";
 import React from "react";
+import {signIn} from "../../services/accountService.ts";
 
 type State = {
     username: string
     password: string
 }
 
-type Action = {
-    type: "SET_USERNAME" | "SET_PASSWORD";
-    payload: string
-}
+type Action =
+    { type: "SET_USERNAME", payload: string } |
+    { type: "SET_PASSWORD", payload: string } |
+    { type: "RESET" }
 
 const reducer = (state: State, action: Action) => {
     switch (action.type) {
         case "SET_USERNAME": return { ...state, username: action.payload }
         case "SET_PASSWORD": return { ...state, password: action.payload }
+        case "RESET": return { username: "", password: "" };
     }
 }
 
 const SignIn = () => {
     const [state, dispatch] = useReducer(reducer, { username: "", password: "" });
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log(state);
+
+        const body = {
+            username: state.username,
+            password: state.password,
+        }
+
+        const response = await signIn(body);
+
+        if (response != null) {
+            dispatch({ type: "RESET" })
+            console.log(response);
+        }
     }
 
     return (
