@@ -3,7 +3,7 @@ import Button from "../Button/Button.tsx";
 import Input from "../Input/Input.tsx";
 import { useReducer } from "react";
 import React from "react";
-import {signIn} from "../../services/accountService.ts";
+// import {signIn} from "../../services/accountService.ts";
 
 type State = {
     username: string
@@ -23,28 +23,27 @@ const reducer = (state: State, action: Action) => {
     }
 }
 
-const SignIn = () => {
+type Props = {
+    setIsSignIn: (val: boolean) => void
+}
+
+const SignIn = ({ setIsSignIn }: Props) => {
     const [state, dispatch] = useReducer(reducer, { username: "", password: "" });
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        const body = {
-            username: state.username,
-            password: state.password,
-        }
-
-        const response = await signIn(body);
-
-        if (response != null) {
-            dispatch({ type: "RESET" })
-            console.log(response);
-        }
+        // const body = {
+        //     username: state.username,
+        //     password: state.password,
+        // }
+        //
+        // const response = await signIn(body);
     }
 
     return (
         <form onSubmit={handleSubmit} className={style['sign-in']}>
-            <span>Create an account</span>
+            <span onClick={() => setIsSignIn(false)}>Create an account</span>
             <div>
                 <h1>Sign In</h1>
                 <fieldset>

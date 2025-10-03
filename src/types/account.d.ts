@@ -9,3 +9,9 @@ export type SignInResponse = {
     expiresIn: number
     refreshToken: string
 }
+
+export type SignUpRequest = {
+    email: string
+    username: string
+    password: string
+}
