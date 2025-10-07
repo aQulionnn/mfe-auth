@@ -1,9 +1,11 @@
-import style from './SignIn.module.css'
+import style from "./SignIn.module.css"
 import Button from "../Button/Button.tsx";
 import Input from "../Input/Input.tsx";
 import { useReducer } from "react";
 import React from "react";
-// import {signIn} from "../../services/accountService.ts";
+import { signIn } from "../../services/accountService.ts";
+import {useAccountStore} from "../../store/accountStore.ts";
+
 
 type State = {
     username: string
@@ -29,16 +31,22 @@ type Props = {
 
 const SignIn = ({ setIsSignIn }: Props) => {
     const [state, dispatch] = useReducer(reducer, { username: "", password: "" });
+    const setAuth = useAccountStore(state => state.setAuth)
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        // const body = {
-        //     username: state.username,
-        //     password: state.password,
-        // }
-        //
-        // const response = await signIn(body);
+        const body = {
+            username: state.username,
+            password: state.password,
+        }
+
+        const response = await signIn(body);
+
+        if (response) {
+            setAuth(response);
+            dispatch({ type: "RESET" })
+        }
     }
 
     return (
